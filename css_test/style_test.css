@@ -1,0 +1,117 @@
+/* 글꼴 설정 */
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+} 
+/* 전체 선택 */
+*{
+    /* 초기 설정된 기본 여백들이 있기에 이를 모두 제거하는 설정을 한다. */
+    margin: 0;
+    /* 바깥 여백을 0으로 설정 */
+    padding: 0;
+    /* 안쪽 여백을 0으로 설정 */
+    box-sizing: border-box;
+    /* 여백으로 전쳬 화면의 크기가 변경되는 것을 방지하게 설정 */
+}
+
+
+/* 배경처리   배경의 크기를 결정하고 배경의 색상 등을 처리해야 한다.  */
+
+/* .을 사용해서 클래스 설정하기 */
+
+.container
+{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url(./images/room.jpg);
+    /* 배경색을 그라데이션 처리, 사진 삽입 */
+
+}
+
+
+/* 헤더배치 */
+/* 로고 메뉴 두 덩어리의 배치 조절과 header부분의 전체 크기 조절  */
+.header{
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+/* 글자로고 */
+/* container클래스 안 속의 header 안속의 h1 안속의 a 태그 속성 변경 */
+.container .header h1 a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: abster;
+}
+
+
+/* 메뉴요소 배치 */
+.container .header .nav ul li{
+    display: inline;
+    margin: 0 10px;
+}
+
+
+/* 메뉴요소 스타일링 */
+.container .header .nav a{
+    color: rgb(200, 187, 187);
+    text-decoration: none;
+    
+}
+
+/* 메뉴요소 마우스이벤트 */
+/* hover 가상선택자를 이용해서 마우스를 올렸을때 글자색이 변경되도록 처리 */
+.container .header .nav a:hover{
+    color: aquamarine;
+}
+
+
+
+/* 화면 중앙 요소 배치 */
+/* hero 영역을 중앙에 배치하기 위해 1> 기준점을 부모요소기준으로 */
+/* 바꾸기 위해 position absolute 속성을 사용함. */
+/* 2> 기준점대비 중앙값이 화면 가로크기 및 세로 크기 50, 50으로 값을 설정함.
+3> 가쥰좀울 설정한후 기준점만 화면 정중앙에 배치되므로 실제 중앙에 배치할 글자, 버튼을 중앙에 오게 하기 위해
+미세조정이 필요함 그렇기에 translate 사용 */
+.container .hero{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* traslate에서의 %는 해당된 그 상자를 기준으로 움직인다 그렇기에 중심점의 기점을 중심으로 상자의 가로로 반 세로로 반 만큼 이동 */
+
+    color: whitesmoke;
+    text-align: center;
+
+}
+
+
+/* 화면 중앙 요소 제목 */
+.container .hero h2{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+/* 화면 중앙 요소 본문 */
+.container .hero p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* 화면 중앙 요소 버튼 */
+.container .hero button{
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 2px solid aqua;
+    
+}
+/* 화면 중앙 요소 버튼 처리 */
+.container .hero button:hover{
+    background-color: grey;
+}
